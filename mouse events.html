@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rectdiv{
+            width:98vw;
+            height:200px;
+            background-color:cyan;
+            border: 1px solid black;
+            border-radius: 10px;
+            display:flex;
+            justify-content: space-around;
+        }
+        .rect{
+            width:180px;
+            height:150px;
+            background-color:pink;
+            margin-top:30px;
+            transition: all 1s ease;
+        }
+        .t1{
+            transform : scale(1.1);
+        }
+        .t2{
+            transform : rotate(90deg);
+        }
+        .t3{
+            transform : skew(1.5);
+        }
+        .t4{
+            transform : translate(30px);
+        }
+        .t5{
+            transform : translate(-30px);
+        }
+    </style>
+</head>
+<body>
+    <div class="rectdiv">
+        <div class="rect one"></div>
+        <div class="rect two"></div>
+        <div class="rect three"></div>
+        <div class="rect four"></div>
+        <div class="rect five"></div>
+        <div class="rect six"></div>
+    </div>
+    <script>
+        let one = document.querySelector(".one");
+        let two = document.querySelector(".two");
+        let three = document.querySelector(".three");
+        let four = document.querySelector(".four");
+        let five = document.querySelector(".five");
+        let six = document.querySelector(".six");
+
+        one.addEventListener("click",()=>{
+            one.style.backgroundColor = "orchid";
+        })
+        two.addEventListener("dblclick",()=>{
+            two.style.backgroundColor = "orchid";
+            two.classList.add("t1");
+        })
+        three.addEventListener("mouseover",()=>{
+            three.style.backgroundColor = "orchid";
+            three.classList.add("t2");
+        })
+        four.addEventListener("mouseout",()=>{
+            four.style.backgroundColor = "orchid";
+            four.classList.add("t3");
+        })
+        five.addEventListener("mousedown",()=>{
+            five.style.backgroundColor = "orchid";
+            five.classList.add("t4");
+        })
+        six.addEventListener("mouseup",()=>{
+            six.style.backgroundColor = "orchid";
+            six.classList.add("t5");
+        })
+    </script>
+</body>
+</html>

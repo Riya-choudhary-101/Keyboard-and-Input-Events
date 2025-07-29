@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .output{
+            background-color: rgba(188, 28, 209, 0.176);
+            width:250px;
+            height:200px;
+            position:relative;
+            top:10px;
+            border: 2px solid rgb(255, 47, 193);
+            padding-left:1em;
+        }
+    </style>
+</head>
+<body bgcolor="pink">
+    <h1>Keyboards Events : KeyDown & KeyUp</h1>
+    <label for="yes"> Enter The Keys :
+        <input type="text" id="yes" placeholder="Enter Something...."/>
+    </label>
+    <div class="output">
+        <p class="para1">Key Pressed : </p>
+        <p class="para2">Key Code : </p>
+        <p class="para3">Key Char Code : </p>
+        <p class="para4">Event Type : </p>
+    </div>
+    <script>
+        let yes = document.querySelector("#yes");
+        let press = document.querySelector(".para1");
+        let code = document.querySelector(".para2");
+        let charcode = document.querySelector(".para3");
+        let types = document.querySelector(".para4");
+        yes.addEventListener("keydown" ,(event)=>{
+            console.log(event);
+            press.innerHTML = `Key Pressed : ${event.key}`;
+            code.innerHTML = `Key Code : ${event.code}`;
+            charcode.innerHTML = `Key Char Code : ${event.key.charCodeAt(0)}`;
+            types.innerHTML = `Event Type : ${event.type}`;
+        })
+        yes.addEventListener("keyup" ,(event)=>{
+            console.log(event);
+            press.innerHTML = `Key Pressed : ${event.key}`;
+            code.innerHTML = `Key Code : ${event.code}`;
+            charcode.innerHTML = `Key Char Code : ${event.key.charCodeAt(0)}`;
+            types.innerHTML = `Event Type : ${event.type}`;
+        })
+    </script>
+</body>
+</html>

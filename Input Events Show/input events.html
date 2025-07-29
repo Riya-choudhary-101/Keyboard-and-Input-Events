@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .output{
+            background-color: rgba(188, 28, 209, 0.176);
+            width:250px;
+            height:200px;
+            position:relative;
+            top:10px;
+            border: 2px solid rgb(255, 47, 193);
+            padding-left:1em;
+        }
+    </style>
+</head>
+<body bgcolor="pink">
+    <h1>Input Events : Input & Change</h1>
+    <label for="yes"> Enter The Keys :
+        <input type="text" id="yes"name="username" placeholder="Enter Something...."/>
+    </label>
+    <div class="output">
+        <p class="para1">Input Value : </p>
+        <p class="para2">Input Name : </p>
+        <p class="para3">Input Type : </p>
+        <p class="para4">Event Type : </p>
+    </div>
+    <script>
+        let yes = document.querySelector("#yes");
+        let press = document.querySelector(".para1");
+        let code = document.querySelector(".para2");
+        let charcode = document.querySelector(".para3");
+        let types = document.querySelector(".para4");
+        yes.addEventListener("input" ,(event)=>{
+            console.log(event);
+            press.innerHTML = `Input value : ${event.target.value}`;
+            code.innerHTML = `Input Name : ${event.target.name}`;
+            charcode.innerHTML = `Input Type : ${event.inputType}`;
+            types.innerHTML = `Event Type : ${event.type}`;
+        })
+        yes.addEventListener("change" ,(event)=>{
+            console.log(event);
+            press.innerHTML = `Input value : ${event.target.value}`;
+            code.innerHTML = `Input Name : ${event.target.name}`;
+            charcode.innerHTML = `Input Type : ${event.inputType}`;
+            types.innerHTML = `Event Type : ${event.type}`;
+        })
+    </script>
+</body>
+</html>
